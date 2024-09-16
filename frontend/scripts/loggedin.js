@@ -5,12 +5,12 @@ window.onload = function() {
         document.getElementById('welcomeMessage').textContent = `Welcome, ${name}`;
         loadTasks();
     } else {
-        window.location.href = 'index.html';
+        window.location.href = '/frontend/pages/index.html';
     }
 
     document.getElementById('logoutButton').addEventListener('click', function() {
         localStorage.removeItem('email');
-        window.location.href = 'index.html';
+        window.location.href = '/frontend/pages/index.html';
     });
 
     document.getElementById('addTaskButton').addEventListener('click', function() {

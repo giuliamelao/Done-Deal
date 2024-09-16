@@ -39,7 +39,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         if (data.message === 'Login successful!') {
             localStorage.setItem('email', email);
             localStorage.setItem('name', data.user.name);
-            window.location.href = 'loggedin.html';
+            window.location.href = '/frontend/pages/loggedin.html';
         } else {
             showModal(data.message);
         }
