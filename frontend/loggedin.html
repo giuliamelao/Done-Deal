@@ -12,7 +12,37 @@
         <h1 class="app-name">Done Deal</h1>
         <h2 id="welcomeMessage">Welcome, User</h2>
         <button id="logoutButton">Logout</button>
+        
+        <h3>Task Board</h3>
+        <div id="taskBoard"></div>
+        <button id="addTaskButton">Add New Task</button>
     </div>
+
+    <!-- Task Form Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Task</h2>
+            <form id="taskForm">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" required>
+                <label for="taskDescription">Description:</label>
+                <textarea id="taskDescription"></textarea>
+                <label for="taskPriority">Priority:</label>
+                <select id="taskPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label for="taskType">Task Type:</label>
+                <input type="text" id="taskType">
+                <label for="taskColor">Color:</label>
+                <input type="color" id="taskColor">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
     <script src="loggedin.js"></script>
 </body>
 </html>

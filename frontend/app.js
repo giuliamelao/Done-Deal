@@ -18,10 +18,10 @@ function showModal(message) {
     }
 }
 
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
 
     fetch('http://localhost:3002/login', {
         method: 'POST',
@@ -30,22 +30,26 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
         },
         body: JSON.stringify({ email, password })
     })
-    .then(res => res.json())
+    .then(res => {
+        console.log('Server Response Status:', res.status); // Log response status
+        return res.json();
+    })
     .then(data => {
-        if (data.user) {
-            // Store user name in local storage
-            localStorage.setItem('username', data.user.name);
-            // Redirect to logged-in page
+        console.log('Server Response Data:', data); // Log response data
+        if (data.message === 'Login successful!') {
+            localStorage.setItem('email', email);
+            localStorage.setItem('name', data.user.name);
             window.location.href = 'loggedin.html';
         } else {
             showModal(data.message);
         }
     })
     .catch(error => {
-        showModal('Login failed!');
-        console.error('Error:', error);
+        console.error('Fetch Error:', error); // Log fetch error
+        showModal('Login failed!'); // Display a user-friendly message
     });
 });
+
 
 
 document.getElementById("registerForm").addEventListener("submit", function(e) {
