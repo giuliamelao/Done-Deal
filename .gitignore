@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment Variables
+.env
+
+# Docker files
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile
+
+# MongoDB Data (in case you're saving the data locally)
+~/mongo-data/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Coverage directory used by testing tools
+coverage/
+
+# Production build
+dist/
+
+# MacOS files
+*.DS_Store
+
+# lockfiles
+package-lock.json
+yarn.lock
