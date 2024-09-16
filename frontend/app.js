@@ -32,13 +32,21 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     })
     .then(res => res.json())
     .then(data => {
-        showModal(data.message);
+        if (data.user) {
+            // Store user name in local storage
+            localStorage.setItem('username', data.user.name);
+            // Redirect to logged-in page
+            window.location.href = 'loggedin.html';
+        } else {
+            showModal(data.message);
+        }
     })
     .catch(error => {
         showModal('Login failed!');
         console.error('Error:', error);
     });
 });
+
 
 document.getElementById("registerForm").addEventListener("submit", function(e) {
     e.preventDefault();

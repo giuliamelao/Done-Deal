@@ -23,11 +23,12 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });
     if (user) {
-        res.json({ message: 'Login successful!' });
+        res.json({ message: 'Login successful!', user: { name: user.name } });
     } else {
         res.status(400).json({ message: 'Invalid credentials!' });
     }
 });
+
 
 app.post('/register', async (req, res) => {
     const { name, email, password } = req.body;
