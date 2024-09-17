@@ -5,21 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome - Done Deal</title>
     <link rel="stylesheet" href="/frontend/styles/style.css">
+    <link rel="stylesheet" href="/frontend/styles/loggedin.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="app-name">Done Deal</h1>
-        <h2 id="welcomeMessage">Welcome, User</h2>
-        <button id="logoutButton">Logout</button>
-        
+    <header class="container">
+        <div class="header-left">
+            <h1 class="app-name">Done Deal</h1>
+            <h2 id="welcomeMessage" class="welcome-message">Welcome, User</h2>
+        </div>
+        <div>
+            <button id="logoutButton" class="button_logout">Logout</button>
+        </div>
+    </header>
+    
+    <div class="body">
         <h3>Task Board</h3>
-        <div id="taskBoard"></div>
-        <button id="addTaskButton">Add New Task</button>
+        <div id="taskBoard" class="task-box">
+            <!-- Task boxes will be added here dynamically -->
+        </div>
+        <button id="addTaskButton" class="butt">Add New Task</button>
     </div>
+    
 
-    <!-- Task Form Modal -->
-    <div id="taskModal" class="modal">
+     <!-- Task Form Modal -->
+     <div id="taskModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Add New Task</h2>
