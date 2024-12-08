@@ -1,3 +1,5 @@
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
 <h1>Done Deal - Task Management API 📌📑</h1>
 
 <p>🔎 Done Deal is a simple Task Management API built with Node.js and Express, designed to help you efficiently manage tasks. ✅</p>
